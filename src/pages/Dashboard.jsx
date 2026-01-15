@@ -49,7 +49,7 @@ export const Header = ({
           className="text-sm px-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-700"
         >
           <option value="" className="text-gray-700">
-            All Categories
+            All
           </option>
           <option value="electronics" className="text-gray-700">
             Electronics
