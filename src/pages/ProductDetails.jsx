@@ -5,7 +5,6 @@ import { fetchProducts } from "../features/products/productsSlice";
 import { StarHalf, Star, Heart, ArrowLeft } from "lucide-react";
 import {
   addToFavorites,
-  removeFromFavorites,
 } from "../features/favorites/favoritesSlice";
 
 export default function ProductDetails() {
@@ -17,11 +16,6 @@ export default function ProductDetails() {
   const favorites = useSelector((state) => state.favorites.items);
   const isFavorite = favorites.some((item) => item.id === product?.id);
 
-  const toggleFavorites = () => {
-    dispatch(
-      isFavorite ? removeFromFavorites(product) : addToFavorites(product)
-    );
-  };
 
   useEffect(() => {
     if (!items.length) dispatch(fetchProducts());
@@ -105,7 +99,7 @@ export default function ProductDetails() {
 
           {/* Favorites Button */}
           <button
-            onClick={toggleFavorites}
+            onClick={()=> dispatch(addToFavorites(product))}
             className="mt-4 flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition w-full sm:w-max"
           >
             <Heart
@@ -113,7 +107,7 @@ export default function ProductDetails() {
                 isFavorite ? "fill-red-500 text-red-500" : ""
               }`}
             />
-            {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+            {isFavorite ? "Added to Favorites" : "Add to Favorites"}
           </button>
         </div>
       </div>
