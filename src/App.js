@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
-import { ProductDetails } from "./pages/ProductDetails";
+import  ProductDetails  from "./pages/ProductDetails";
 import Favorites from "./pages/Favorites";
+
 function App() {
   return (
     <Routes>

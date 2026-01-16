@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../features/products/productsSlice";
@@ -7,16 +7,15 @@ import {
   addToFavorites,
   removeFromFavorites,
 } from "../features/favorites/favoritesSlice";
-import { Link } from "react-router-dom";
 
-export const ProductDetails = () => {
+export default function ProductDetails() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { items, loading, error } = useSelector((state) => state.products);
 
   const product = items.find((item) => item.id === parseInt(id));
   const favorites = useSelector((state) => state.favorites.items);
-  const isFavorite = favorites.find((item) => item.id === product?.id);
+  const isFavorite = favorites.some((item) => item.id === product?.id);
 
   const toggleFavorites = () => {
     dispatch(
@@ -120,4 +119,4 @@ export const ProductDetails = () => {
       </div>
     </div>
   );
-};
+}
