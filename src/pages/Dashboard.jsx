@@ -21,78 +21,122 @@ export const Header = ({
   setSort,
 }) => {
   return (
-    <div className="bg-indigo-600 px-20 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
-      {/* Left: Title */}
-      <h1 className="flex items-center font-medium bg-white text-indigo-800 rounded-md gap-2 p-3 text-xl sm:text-2xl font-bold tracking-wide">
-        <ShoppingBag className="w-6 h-6" />
-        Shop Now
-      </h1>
+    <div className="bg-indigo-600 px-5 sm:px-20 py-5 shadow-md">
 
-      {/* Middle: Search + Filters */}
-      <div className="flex flex-1 sm:flex-none items-center gap-3">
+      {/* Mobile Top Row: Title + Heart */}
+      <div className="flex items-center justify-between sm:hidden mb-3">
+        <h1 className="flex items-center font-medium bg-white text-indigo-800 rounded-md gap-2 px-3 py-2 text-lg font-bold tracking-wide">
+          <ShoppingBag className="w-5 h-5" />
+          Shop Now
+        </h1>
+
+        <Link
+          to="/favorites"
+          className="bg-white hover:bg-white p-2 rounded-lg transition-all"
+        >
+          <Heart className="w-5 h-5 text-red-600" />
+        </Link>
+      </div>
+
+      {/* Mobile Search + Filters */}
+      <div className="flex flex-col sm:hidden gap-2 mb-3">
         {/* Search */}
-        <div className="relative flex-1 sm:flex-none">
+        <div className="relative w-full">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-700 w-4 h-4" />
           <input
             type="text"
             placeholder="Search products..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full sm:w-64 text-sm pl-10 pr-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-700 placeholder-gray-700"
+            className="w-full text-sm pl-10 pr-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-700 placeholder-gray-700"
           />
         </div>
 
-        {/* Category Filter */}
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="text-sm px-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-700"
-        >
-          <option value="" className="text-gray-700">
-            All
-          </option>
-          <option value="electronics" className="text-gray-700">
-            Electronics
-          </option>
-          <option value="jewelery" className="text-gray-700">
-            Jewelery
-          </option>
-          <option value="men's clothing" className="text-gray-700">
-            Men Clothing
-          </option>
-          <option value="women's clothing" className="text-gray-700">
-            Women Clothing
-          </option>
-        </select>
+        {/* Filters */}
+        <div className="flex gap-2">
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="flex-1 text-sm px-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-700"
+          >
+            <option value="">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="jewelery">Jewelery</option>
+            <option value="men's clothing">Men Clothing</option>
+            <option value="women's clothing">Women Clothing</option>
+          </select>
 
-        {/* Sort Filter */}
-        <select
-          value={sort}
-          onChange={(e) => setSort(e.target.value)}
-          className="text-sm px-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-700"
-        >
-          <option value="" className="text-gray-700">
-            Default
-          </option>
-          <option value="asc" className="text-gray-700">
-            Price: Low to High
-          </option>
-          <option value="desc" className="text-gray-700">
-            Price: High to Low
-          </option>
-        </select>
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value)}
+            className="flex-1 text-sm px-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-700"
+          >
+            <option value="">Default</option>
+            <option value="asc">Price: Low to High</option>
+            <option value="desc">Price: High to Low</option>
+          </select>
+        </div>
       </div>
 
-      {/* Right: Favorites */}
-      <Link
-        to="/favorites"
-        className="bg-white hover:bg-white p-2 rounded-lg transition-all"
-      >
-        <Heart className="w-5 h-5 text-red-600" />
-      </Link>
+      {/* Desktop / Tablet Layout */}
+      <div className="hidden sm:flex items-center justify-between gap-4">
+        {/* Left: Title */}
+        <h1 className="flex items-center font-medium bg-white text-indigo-800 rounded-md gap-2 p-3 text-xl sm:text-2xl font-bold tracking-wide">
+          <ShoppingBag className="w-6 h-6" />
+          Shop Now
+        </h1>
+
+        {/* Middle: Search + Filters */}
+        <div className="flex flex-1 sm:flex-none items-center gap-3">
+          {/* Search */}
+          <div className="relative flex-1 sm:flex-none">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-700 w-4 h-4" />
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full sm:w-64 text-sm pl-10 pr-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-700 placeholder-gray-700"
+            />
+          </div>
+
+          {/* Category Filter */}
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="text-sm px-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-700"
+          >
+            <option value="">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="jewelery">Jewelery</option>
+            <option value="men's clothing">Men Clothing</option>
+            <option value="women's clothing">Women Clothing</option>
+          </select>
+
+          {/* Sort Filter */}
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value)}
+            className="text-sm px-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white text-gray-700"
+          >
+            <option value="">Default</option>
+            <option value="asc">Price: Low to High</option>
+            <option value="desc">Price: High to Low</option>
+          </select>
+        </div>
+
+        {/* Right: Favorites */}
+        <Link
+          to="/favorites"
+          className="bg-white hover:bg-white p-2 rounded-lg transition-all"
+        >
+          <Heart className="w-5 h-5 text-red-600" />
+        </Link>
+      </div>
     </div>
   );
 };
+
 
 export default function Dashboard() {
   const dispatch = useDispatch();

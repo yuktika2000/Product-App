@@ -39,7 +39,7 @@ export default function ProductDetails() {
     <div className="bg-gray-50 min-h-screen px-24 pb-24 pt-12 px-4 sm:px-6 lg:px-0">
       <Link
         to="/"
-        className="inline-flex items-center gap-1 ml-20 mb-4
+        className="inline-flex items-center gap-1 ml-2 sm:ml-20 mb-4
              bg-indigo-50  px-3 py-1.5 rounded-full text-indigo-700 hover:text-indigo-800
              text-sm font-medium hover:bg-indigo-50 border border-indigo-400
              transition"
@@ -53,12 +53,19 @@ export default function ProductDetails() {
           <img
             src={product.image}
             alt={product.title}
-            className="w-full max-w-xs sm:max-w-md md:max-w-lg h-70 sm:h-96 md:h-[480px] object-contain rounded-lg shadow-sm"
+className="
+  w-full
+  max-w-[220px] sm:max-w-xs md:max-w-md
+  h-48 sm:h-72 md:h-96
+  object-contain
+  rounded-lg
+  shadow-sm
+"
           />
         </div>
 
         {/* DETAILS */}
-        <div className="flex-1 flex flex-col justify-start gap-6 w-full bg-white p-10 rounded-lg shadow-sm">
+        <div className="flex-1 flex flex-col justify-start gap-6 w-full bg-white p-7 sm:p-10 rounded-lg shadow-sm">
           <h1 className="text-2xl sm:text-3xl md:text-4xl text-gray-900 font-medium">
             {product.title}
           </h1>

@@ -6,8 +6,8 @@ import { removeFromFavorites } from "../features/favorites/favoritesSlice";
 /* ================= HEADER ================= */
 export const Header = () => {
   return (
-    <div className="bg-indigo-600 px-20 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
-      <h1 className="flex items-center bg-white text-indigo-800 rounded-md gap-2 p-3 text-xl sm:text-2xl font-semibold">
+    <div className="bg-indigo-600 px-5 sm:px-20 py-5 shadow-md">
+      <h1 className="inline-flex items-center bg-white text-indigo-800 rounded-md gap-2 p-3 text-xl font-semibold">
         <Heart className="w-6 h-6 fill-red-500 text-red-500" />
         Your Favorites
       </h1>
@@ -33,7 +33,7 @@ export default function Favorites() {
       {/* BACK BUTTON*/}
       <Link
         to="/"
-        className="inline-flex items-center gap-1 ml-20 mt-6 
+        className="inline-flex items-center gap-1 ml-2 sm:ml-20 mt-6 
              bg-indigo-50  px-3 py-1.5 rounded-full text-indigo-700 hover:text-indigo-800
              text-sm font-medium hover:bg-indigo-50 border border-indigo-400
              transition">
