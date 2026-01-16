@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# Product Dashboard Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A **Product Dashboard** built using **React**, **Redux Toolkit**, and **Tailwind CSS**.  
+Allows users to browse products, search, filter, sort, view product details, and manage favorites.  
+Includes **unit and integration tests** with coverage reports.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+1. [Features](#features)  
+2. [Tech Stack](#tech-stack)  
+3. [Setup & Installation](#setup--installation)  
+4. [Running the Application](#running-the-application)  
+5. [Application Pages & Detailed Features](#application-pages--detailed-features)  
+6. [State Management (Redux)](#state-management-redux)  
+7. [Testing](#testing)  
+8. [Project Structure](#project-structure)  
+9. [Notes](#notes)  
+10. [Assignment Deliverables Status](#assignment-deliverables-status)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+### Dashboard (Product Listing Page)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Displays products in a **responsive grid** (1–4 columns depending on screen size).  
+- Each product card shows:
+  - **Category badge** (top-right)  
+  - **Image** with hover animation  
+  - **Title** (truncated if longer than 35 characters)  
+  - **Price**  
+  - **Rating** (full stars and half stars)  
+- **Search bar** to filter products by title in real-time.  
+- **Category filter**: Electronics, Jewelery, Men Clothing, Women Clothing.  
+- **Sort filter**: Price ascending or descending.  
+- **No products found** message if no match.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Product Details Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Displays full information about a product:
+  - Image  
+  - Title  
+  - Price  
+  - Category  
+  - Rating (stars + review count)  
+  - Description  
+- **Favorites button**:  
+  - If product is not in favorites → "Add to Favorites"  
+  - If product is already in favorites → "Remove from Favorites"  
+  - Button updates Redux state on click.  
+- **Back button** navigates to Dashboard.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### Favorites Page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Displays all products added to favorites.  
+- Each product card includes:
+  - Image  
+  - Title  
+  - Price  
+  - Category  
+  - Rating (stars + count)  
+  - **Remove button** (heart icon) to remove from favorites.  
+- Grid layout same as Dashboard.  
+- **Empty state message** when no favorites are added.  
+- **Back button** navigates to Dashboard.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Additional Functionalities
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Search functionality**:  
+  - Filters products by title in **case-insensitive** manner.  
+- **Category filtering**:  
+  - Filters products based on selected category.  
+- **Sort functionality**:  
+  - Sort products by price (Low → High / High → Low).   
+- **Responsive UI**:  
+  - Uses Tailwind CSS for responsive design, works on mobile, tablet, desktop.  
+- **Loading and error states**:  
+  - Spinner while fetching products  
+  - Error message if API call fails
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Tech Stack
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **React** (Functional Components & Hooks)  
+- **Redux Toolkit** (Slices, Actions, Selectors)  
+- **React Router DOM** (Routing)  
+- **Tailwind CSS** (Responsive styling)  
+- **Jest & React Testing Library** (Unit & Integration Tests)  
+- **Fake Store API** (Product Data)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Setup & Installation
 
-### Analyzing the Bundle Size
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Node.js v16+  
+- npm or yarn  
+- Git
 
-### Making a Progressive Web App
+### Installation Steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Clone the repository:
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+git clone https://github.com/yuktika2000/Product-App.git
+cd product-app
