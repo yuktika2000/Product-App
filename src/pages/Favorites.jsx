@@ -36,17 +36,27 @@ export default function Favorites() {
         className="inline-flex items-center gap-1 ml-20 mt-6 
              bg-indigo-50  px-3 py-1.5 rounded-full text-indigo-700 hover:text-indigo-800
              text-sm font-medium hover:bg-indigo-50 border border-indigo-400
-             transition"
-      >
+             transition">
         <ArrowLeft className="w-4 h-4" />
         Back
       </Link>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-20">
         {favorites.length === 0 ? (
-          <p className="text-center col-span-full text-gray-500">
-            No favorite products added yet.
-          </p>
+          <div className="col-span-full flex flex-col items-center justify-center py-16 text-center">
+            <div className="mb-4 rounded-full bg-gray-100 p-4">
+              <Heart className="h-8 w-8 text-gray-400" />
+            </div>
+
+            <p className="text-lg font-medium text-gray-700">
+              No favorite products yet
+            </p>
+
+            <p className="mt-1 max-w-sm text-sm text-gray-500">
+              Browse products and tap the heart icon to save your favorites
+              here.
+            </p>
+          </div>
         ) : (
           favorites.map((product) => (
             <Link

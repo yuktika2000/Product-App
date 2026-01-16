@@ -23,7 +23,7 @@ export const Header = ({
   return (
     <div className="bg-indigo-600 px-20 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
       {/* Left: Title */}
-      <h1 className="flex items-center font-medium bg-white text-indigo-800 rounded-md gap-2 p-3 text-xl sm:text-2xl font-bold text-white tracking-wide">
+      <h1 className="flex items-center font-medium bg-white text-indigo-800 rounded-md gap-2 p-3 text-xl sm:text-2xl font-bold tracking-wide">
         <ShoppingBag className="w-6 h-6" />
         Shop Now
       </h1>
@@ -57,10 +57,10 @@ export const Header = ({
           <option value="jewelery" className="text-gray-700">
             Jewelery
           </option>
-          <option value="men clothing" className="text-gray-700">
+          <option value="men's clothing" className="text-gray-700">
             Men Clothing
           </option>
-          <option value="women clothing" className="text-gray-700">
+          <option value="women's clothing" className="text-gray-700">
             Women Clothing
           </option>
         </select>
