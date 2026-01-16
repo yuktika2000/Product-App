@@ -57,10 +57,10 @@ export const Header = ({
           <option value="jewelery" className="text-gray-700">
             Jewelery
           </option>
-          <option value="men clothing" className="text-gray-700">
+          <option value="men's clothing" className="text-gray-700">
             Men Clothing
           </option>
-          <option value="women clothing" className="text-gray-700">
+          <option value="women's clothing" className="text-gray-700">
             Women Clothing
           </option>
         </select>
