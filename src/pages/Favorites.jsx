@@ -36,8 +36,7 @@ export default function Favorites() {
         className="inline-flex items-center gap-1 ml-20 mt-6 
              bg-indigo-50  px-3 py-1.5 rounded-full text-indigo-700 hover:text-indigo-800
              text-sm font-medium hover:bg-indigo-50 border border-indigo-400
-             transition"
-      >
+             transition">
         <ArrowLeft className="w-4 h-4" />
         Back
       </Link>
