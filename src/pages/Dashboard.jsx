@@ -22,7 +22,6 @@ export const Header = ({
 }) => {
   return (
     <div className="bg-indigo-600 px-5 sm:px-20 py-5 shadow-md">
-
       {/* Mobile Top Row: Title + Heart */}
       <div className="flex items-center justify-between sm:hidden mb-3">
         <h1 className="flex items-center font-medium bg-white text-indigo-800 rounded-md gap-2 px-3 py-2 text-lg font-bold tracking-wide">
@@ -136,7 +135,6 @@ export const Header = ({
     </div>
   );
 };
-
 
 export default function Dashboard() {
   const dispatch = useDispatch();
